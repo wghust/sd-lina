@@ -1,0 +1,149 @@
+vender(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  {prop} args
+
+border-radius()
+  vender('border-radius', arguments)
+
+box-shadow()
+  vender('box-shadow', arguments)
+
+opacity(n)
+  opacity n
+  if support-for-ie
+    filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(n * 100) + ')')
+
+transition()
+  vender('transition', arguments)
+
+transform()
+  vender('transform', arguments)
+
+box-sizing()
+  vender('box-sizing', arguments)
+  
+animation() 
+  vender('animation', arguments)
+  
+body
+  padding 0
+  margin 0
+  font 400 15px/20px Roboto,RobotoDraft,Helvetica,Arial,sans-serif
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  background-color #fff
+  
+.table-wrap
+  overflow-x auto
+  th,td
+    white-space nowrap
+  .tb-table thead>tr>th,.tb-table tbody>tr>td
+    vertical-align middle
+
+.tb-table
+  th
+    background-color #f0f2f5 !important
+  th, td
+    border-bottom 2px solid #dfe6ec !important
+    color #5d6494
+  &.tb-table-border
+    border 2px solid #dfe6ec
+    th, td
+      border-right 2px solid #dfe6ec
+
+.commonForm
+  .tb-form-group
+    margin-bottom 0
+
+.opEditBtn
+  position absolute
+  right 20px
+  top 20px
+  padding 3px 10px 1px 10px
+  font-size 12px
+  border-radius 5px
+  transition all 0.25s
+  cursor pointer
+  color #5e5e5e
+  font-size 12px
+  background-color #f2f2f2
+  &.opEditBtnTwo
+    right 80px
+  &.opEditBtnThree
+    right 140px
+  &.opEditBtnFour
+    right 200px
+  &.opEditBtnFive
+    right 260px
+  &:hover
+    background-color #2196f3
+    box-shadow 0 1px 1px rgba(0,0,0,0.1)
+    color #fff !important
+  &.opEditBtnColorTwo:hover
+    background-color #f2f2f2
+
+.tb-card
+  box-shadow(none)
+  &.tb-card-bg
+    background-color #F0F2F5
+  &.tb-card-one
+    box-shadow(0 2px 4px 0 rgba(0, 0, 0, .1))
+
+.tb-breadcrumb
+  padding-left 10px
+  padding-right 10px
+  border-bottom 1px solid #f2f2f2
+
+.container
+  width calc(100% - 400px)
+  // margin-left 200px
+  padding-top 0px
+  min-height 500px
+  transition all 0.25s
+  position absolute
+.fullContainer
+  width 100%
+  margin-left 0
+
+@media screen and (max-width: 1000px)
+  .container
+    width 100%
+    margin-left 0
+  
+@media screen and (min-width: 1200px)
+  .fullContainer
+    width 100%
+    margin 0 auto
+    
+// input
+.tb-input-shadow
+  .tb-input-select-list
+    border-radius 4px
+  .tb-dt-panel
+    border-radius 4px
+    overflow hidden
+  .tb-input-select-filter
+    .tb-input
+      box-shadow none
+      border-bottom 1px solid #f2f2f2
+  .tb-input
+    box-shadow 0 1px 3px rgba(0,0,0,0.3)
+    border none
+  .tb-input-append, .tb-input-prepend
+    box-shadow 0 1px 3px rgba(0,0,0,0.3)
+    border none
+    .tb-in-up, .tb-in-down
+      height 18px
+
+.tb-modal-dialog
+  border-radius 4px
+    
+.tb-pagination-div .tb-pagination li a
+  width 36px
+  padding 0
+  border-radius 36px
+  margin-right 10px
+  box-shadow 0 1px 1px rgba(0,0,0,0.3)
+  background-color #F0F2F5
+  text-align center
